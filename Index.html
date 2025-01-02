@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods Task Two</title>
+
+    <style>
+        /* ضبط الخطوط والألوان الأساسية */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #106b13;
+            font-size: 2rem;
+        }
+
+        h2 {
+            color: #0a3355;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            color: #22b9ff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* تنسيق القائمة */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        ul li {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* التأثيرات عند التمرير */
+        ul li:hover {
+            background-color: #f0f0f0;
+            border-color: #7be3eb;
+        }
+
+        /* إضافة تباعد بين الأقسام */
+        script {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>محتويات السلسلة قبل اجراء اي عملية </h1>
+    <ul id="arrayDisplay"></ul> <!--  المكان الذي سيتم فيه عرض عناصر المصفوفة -->
+
+    <h2>شكل السلسلة الاصلي</h2>
+    <h3>[Apple, Banana, Cherry]</h3>
+
+    <script>
+        // تهيئة او تعريف المصفوفة
+        const fruits = ["Apple", "Banana", "Cherry"];
+
+        //--------------------------------------------------------------------------------------------------
+        
+        // UL تحديد عنصر ال 
+        const arrayDisplay = document.getElementById("arrayDisplay");
+        // التكرار عبر المصفوفة وإنشاء عناصر قائمة
+        for (let i = 0; i < fruits.length; i++) {
+            const listItem = document.createElement("li"); // إنشاء عنصر قائمة جديد
+            listItem.textContent = fruits[i]; // تعيين النص الخاص بعنصر القائمة
+            arrayDisplay.appendChild(listItem); //  UL إضافة العنصر إلى القائمة 
+        };
+        
+        //--------------------------------------------------------------------------------------------------
+
+        // Array join()
+        //join(): يقوم بربط العناصر في سلسلة باستخدام فاصل محدد
+        console.log("Array join with - :", fruits.join(" -- "));
+        // Output: Array join with - : Apple -- Banana -- Cherry
+
+        //--------------------------------------------------------------------------------------------------
+
+        // Array push()
+        //push(): أضافة العناصر في النهاية.
+        fruits.push("Mango");
+        console.log("After push:", fruits);
+        // Output: After push: [ 'Apple', 'Banana', 'Cherry', 'Mango' ]
+
+        //--------------------------------------------------------------------------------------------------
+
+        // Array unshift()
+        //unshift():  أضافة العناصر في البداية.
+        fruits.unshift("Pineapple");
+        console.log("After unshift:", fruits);
+        // Output: After unshift: [ 'Pineapple', 'Apple', 'Banana', 'Cherry', 'Mango' ]
+
+        //--------------------------------------------------------------------------------------------------
+
+        // Array pop()
+        //pop() حذف العناصر في النهاية
+        const lastFruit = fruits.pop();
+        console.log("After pop:", fruits, "| Popped element:", lastFruit);
+        // Output: After pop: ['Apple', 'Banana', 'Cherry'] | Shifted element: Pineapple
+
+        //--------------------------------------------------------------------------------------------------
+
+        // Array shift()
+        //shift()  حذف العناصر في البداية
+        const firstFruit = fruits.shift();
+        console.log("After shift:", fruits, "| Shifted element:", firstFruit);
+        // Output: After shift: ['Apple', 'Banana', 'Cherry'] | Shifted element: Pineapple
+
+    </script>
+</body>
+</html>
